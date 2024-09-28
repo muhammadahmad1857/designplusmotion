@@ -40,7 +40,7 @@ const Slider = () => {
       {/* Review Text with Sliding Animation */}
       <img src="/qoutes.png" alt="" className="mb-4" />
       <div
-        className={`p-4 text-center slide-container w-full md:w-[60%] text-main ${slideDirection}`} // Apply sliding class based on direction
+        className={`p-4 text-center relative transition-transform duration-300 w-full md:w-[60%] text-main ${slideDirection}`} // Apply sliding class based on direction
         key={currentIndex} // Key changes to trigger CSS animation
       >
         <p className="text-2xl font-bold animate-slide ">
