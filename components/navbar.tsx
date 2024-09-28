@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`flex w-full max-md:bg-black md:bg-black/65 md:backdrop-blur-lg h-14  border-b border-white/30 items-center justify-between lg:justify-around  text-white sticky top-0 z-50 py-5 transition-all duration-300`}
+        className={`flex w-full max-md:bg-black md:bg-black/65 md:backdrop-blur-lg h-14  border-b border-white/30 items-center justify-between lg:justify-around text-white sticky top-0 z-50 py-5 transition-all duration-300`}
       >
         <h1 className="text-3xl text-white">Logo</h1>
         <div className="md:flex gap-10 hidden">
