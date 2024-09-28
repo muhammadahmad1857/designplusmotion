@@ -7,6 +7,7 @@ import MyCarousel from "@/components/carousel";
 import ProjectCards from "@/components/projectCards";
 import RevealOnScroll from "@/components/animation/revealOnScroll";
 import FeaturesSection from "@/components/featuredSection";
+import Slider from "@/components/slider";
 export default function Home() {
   return (
     <>
@@ -49,7 +50,7 @@ export default function Home() {
       <ProjectCards />
 
       <RevealOnScroll>
-        <div className="flex mt-20 flex-col items-center gap-5 text-center">
+        <div className="flex mt-20  flex-col items-center gap-5 text-center">
           <h1 className="md:text-6xl sm:text-4xl text-3xl font-bold  ">
             Empower your brand <br />
             with one flat monthly fee
@@ -57,6 +58,11 @@ export default function Home() {
           <FeaturesSection />
         </div>
       </RevealOnScroll>
+        <RevealOnScroll>
+
+          <Slider />
+          </RevealOnScroll>
+
     </>
   );
 }

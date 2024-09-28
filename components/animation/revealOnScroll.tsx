@@ -27,7 +27,7 @@ export default function RevealOnScroll({ children }: RevealOnScrollProps) {
           duration: 3,
           scrollTrigger: {
             trigger: element,
-            start: "top 200",
+            start: "top 400",
             end: "bottom top",
             // markers: process.env.NODE_ENV === "development",
           },
@@ -37,7 +37,7 @@ export default function RevealOnScroll({ children }: RevealOnScrollProps) {
   }, []);
 
   return (
-    <div ref={revealRef} className="reveal-section">
+    <div ref={revealRef} className="pb-10 reveal-section">
       {children}
     </div>
   );

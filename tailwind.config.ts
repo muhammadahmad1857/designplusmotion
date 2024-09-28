@@ -38,10 +38,15 @@ const config: Config = {
           "50%": { scale: "1.6" },
           "100%": { scale: "1" },
         },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
       },
       animation: {
         rotateGradient: "rotateGradient 2s linear infinite",
         scale: "scale 2s linear infinite",
+        fadeIn: "fadeIn 2s linear infinite",
       },
       backgroundSize: {
         "200%": "200% 200%",
