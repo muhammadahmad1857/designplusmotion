@@ -26,7 +26,7 @@ const Navbar = () => {
             FAQ
           </Link>
           <Link href={"/"} className="btn p-3">
-            Let's talk
+            Let&apos;s talk
           </Link>
         </div>
         <button
@@ -63,7 +63,7 @@ const Navbar = () => {
             FAQ
           </Link>
           <Link href={"/"} className="btn p-6">
-            Let's talk
+            Let&apos;s talk
           </Link>
         </div>
       </div>

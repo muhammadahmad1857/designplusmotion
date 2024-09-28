@@ -1,6 +1,6 @@
 "use client";
 import TextSwap from "@/components/textSwap";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Play } from "lucide-react";
 import MyCarousel from "@/components/carousel";
 import ProjectCards from "@/components/projectCards";
@@ -33,7 +33,7 @@ const Home = () => {
           </div>
         </div>
         <div className="flex items-center h-1/4 flex-col gap-2 mt-10">
-          <h1 className="text-2xl font-semibold">Let's Talk!</h1>
+          <h1 className="text-2xl font-semibold">Let&apos;s Talk!</h1>
           <p className="text-gray-600 text-lg">Learn more about how it</p>
           <p className="text-gray-600 text-lg">
             works and how we can help you.

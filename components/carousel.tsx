@@ -14,16 +14,16 @@ interface Company {
   id: number;
 }
 
-const fetchCompanies = async () => {
-  try {
-    const response = await client.fetch("*[type == 'companies']");
-    console.log(response);
-  } catch (error) {
-    console.error("Error:", error);
-  }
-};
+// const fetchCompanies = async () => {
+//   try {
+//     const response = await client.fetch("*[type == 'companies']");
+//     console.log(response);
+//   } catch (error) {
+//     console.error("Error:", error);
+//   }
+// };
 const MyCarousel = async () => {
-    const data = await fetchCompanies()
+    // const data = await fetchCompanies()
   return (
     <Carousel
       className="w-full  py-20 "

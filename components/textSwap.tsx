@@ -1,12 +1,12 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 const TextSwap = ({ text1, text2 }: { text1: string; text2: string }) => {
   // const ref = useRef<HTMLElement | null>(null);
   // using usegsap
   console.log(text1, text2);
-  const tl = gsap.timeline();
+  // const tl = gsap.timeline();
   useGSAP(() => {
     gsap.from(".mot", {
       duration: 1,
