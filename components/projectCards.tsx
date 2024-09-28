@@ -15,7 +15,7 @@ interface ProjectType {
 const ProjectCards = () => {
   const projectsContainerRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const container = projectsContainerRef.current;
 
     if (container) {
