@@ -1,0 +1,23 @@
+[
+  {
+    "icon": "Check",
+    "title1": "Easy",
+    "title2": "sign-up",
+    "description1": "Yes! You can request",
+    "description2": "your first design today"
+  },
+  {
+    "icon": "CircleMinus",
+    "title1": "No",
+    "title2": "contracts",
+    "description1": "You can pause or",
+    "description2": "cancel anytime"
+  },
+  {
+    "icon": "CircleDollarSign",
+    "title1": "Fixed",
+    "title2": "monthly rate",
+    "description1": "Complete peace of mind.",
+    "description2": "Pay the same fixed price every month"
+  }
+]

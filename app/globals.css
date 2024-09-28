@@ -136,5 +136,8 @@
   background: linear-gradient(128.53deg,rgba(56,48,227,.1),rgba(191,148,246,.1)); /* Adjust transparency as needed */
   backdrop-filter: blur(10px); /* Adjust blur effect */
   border-radius: 20px;
-  @apply border-main border-4 p-10
+  
+}
+.icon{
+  background: linear-gradient(133deg, rgba(191, 148, 246, .05), rgba(56, 48, 227, .4));
 }
