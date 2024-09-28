@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import companies from "@/data/companies.json";
-import { client } from "@/sanity/lib/client";
+// import { client } from "@/sanity/lib/client";
 
 interface Company {
   path: string;
@@ -34,7 +34,7 @@ const MyCarousel = async () => {
     >
       <CarouselContent className="flex gap-5 sm:gap-20 items-center ">
         {companies.map(
-          (company: { name: string; id: number; path: string }) => {
+          (company: Company) => {
             return (
               <CarouselItem
                 key={company.id}

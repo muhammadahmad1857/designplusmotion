@@ -1,9 +1,11 @@
 "use client";
+
 import React, { useRef } from "react";
+import { useMediaQuery } from "react-responsive"; // Import useMediaQuery for breakpoints
 import projectsData from "@/data/projectsData.json";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,39 +15,54 @@ interface ProjectType {
   id: string;
 }
 
-const ProjectCards = () => {
-  const projectsContainerRef = useRef<HTMLDivElement | null>(null);
-  const translateValue = window.innerWidth > 768 ? "-60vw" : "-200vw";
-  // // Optional: Update scroll settings on window resize
-  // const updateScrollTrigger = () => {
-  //   ScrollTrigger.refresh(); // Refresh the ScrollTrigger instance to adjust positions
-  // };
-  // window.addEventListener("resize", updateScrollTrigger);
+export default function ProjectCards() {
+  const projectsContainerRef = useRef<HTMLDivElement>(null);
+
+  // Breakpoints for responsive design
+  const isLargeScreen = useMediaQuery({ query: "(min-width: 1350px)" });
+  const isMediumScreen = useMediaQuery({
+    query: "(min-width: 768px) and (max-width: 1349px)",
+  });
+  const isSmallScreen = useMediaQuery({ query: "(min-width: 376px) and (max-width: 767px)" });
+  const isExtraSmallScreen = useMediaQuery({ query: "(max-width: 375px)" }); // Breakpoint for <= 375px
+
+  // Define translateValue based on screen size
+  const translateValue = isLargeScreen
+    ? "-60vw"
+    : isMediumScreen
+    ? "-100vw"
+    : isSmallScreen
+    ? "-230vw" // Translate value for screens between 376px and 767px
+    : "-330vw"; // Translate value for screens <= 375px
 
   useGSAP(() => {
     const container = projectsContainerRef.current;
 
     if (container) {
-      // Calculate the translateX value dynamically based on screen size
-
       gsap.to(container, {
-        translateX: translateValue, // Adjusted translateX value for responsiveness
+        translateX: translateValue,
         scrollTrigger: {
           trigger: container,
           start: "top top",
-          end: "+=1500", // Adjust this value as needed for scroll length
+          end: isLargeScreen
+            ? "+=1500"
+            : isMediumScreen
+            ? "+=1200"
+            : isSmallScreen
+            ? "+=1000" // Different scroll lengths based on breakpoints
+            : "+=800", // Scroll length for extra small screens
           scrub: true,
           pin: true,
         },
       });
     }
-  }, []);
+  }, [translateValue, isLargeScreen, isMediumScreen, isSmallScreen, isExtraSmallScreen]); // Dependencies for useGSAP hook
 
   return (
     <div className="w-full overflow-hidden py-10 px-10">
       <div
         ref={projectsContainerRef}
-        className="flex items-center gap-4 md:gap-8" // Responsive gap between cards
+        className="flex items-center gap-4 md:gap-8"
       >
         {projectsData.map((project: ProjectType) => (
           <div
@@ -53,7 +70,7 @@ const ProjectCards = () => {
             key={project.id}
           >
             <img
-              className="w-full h-full hover:scale-110 hover:rounded-none transition-all duration-300 object-cover"
+              className="w-full h-full hover:scale-110 cursor-pointer hover:rounded-none transition-all duration-300 object-cover"
               src={`/project-images/${project.path}`}
               alt={project.title}
             />
@@ -62,6 +79,4 @@ const ProjectCards = () => {
       </div>
     </div>
   );
-};
-
-export default ProjectCards;
+}
