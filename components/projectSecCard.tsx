@@ -14,6 +14,7 @@ const ProjectSecCard = () => {
         {projectsData.slice(0, 4).map((project: ProjectType) => {
           return (
             <img
+              key={project.id}
               src={`/project-images/${project.path}`}
               alt={project.title}
               className="sm:h-96 cursor-pointer md:h-[500px] aspect-square hover:scale-105 transition-transform duration-500 rounded-lg"
