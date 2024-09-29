@@ -8,7 +8,7 @@ import ProjectCards from "@/components/projectCards";
 import RevealOnScroll from "@/components/animation/revealOnScroll";
 import FeaturesSection from "@/components/featuredSection";
 import Slider from "@/components/slider";
-import BenefitCards from "@/components/benefitCrads";
+// import BenefitCards from "@/components/benefitCrads";
 import ProjectSecCard from "@/components/projectSecCard";
 import graphicDesignData from "@/data/graphicDesignData.json";
 import motionDesignData from "@/data/graphicDesignData.json";
