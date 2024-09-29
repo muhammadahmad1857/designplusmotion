@@ -8,6 +8,11 @@ import ProjectCards from "@/components/projectCards";
 import RevealOnScroll from "@/components/animation/revealOnScroll";
 import FeaturesSection from "@/components/featuredSection";
 import Slider from "@/components/slider";
+import BenefitCards from "@/components/benefitCrads";
+import ProjectSecCard from "@/components/projectSecCard";
+import graphicDesignData from "@/data/graphicDesignData.json";
+import motionDesignData from "@/data/graphicDesignData.json";
+import ServiceCard from "@/components/serviceCard";
 export default function Home() {
   return (
     <>
@@ -58,11 +63,53 @@ export default function Home() {
           <FeaturesSection />
         </div>
       </RevealOnScroll>
+      <RevealOnScroll>
+        <Slider />
+      </RevealOnScroll>
+      {/* <RevealOnScroll>
+      <div className="flex pb-10 flex-col items-center gap-5 text-center">
+        <h1 className="md:text-6xl mt-20 sm:text-4xl text-3xl font-bold ">
+          Subscription Benefits
+        </h1>
+        <h3 className="text-3xl text-gray-600 font-semibold">
+          Once you experience them, you'll wonder <br /> how you ever managed
+          without!
+        </h3>
+        <BenefitCards/>
+      </div>
+      </RevealOnScroll> */}
+      <div className="flex pb-10 flex-col items-center gap-5 text-center">
         <RevealOnScroll>
+          <h1 className="md:text-6xl mt-20 sm:text-4xl text-3xl font-bold ">
+            Recent works <br />
+            to inspire{" "}
+          </h1>
+          <button className="hover:border-main rounded-full border p-5 mt-6 hover:shadow-3xl transition-shadow duration-500 hover:shadow-main/25  text-2xl ">
+            See Recent Work
+          </button>
+        </RevealOnScroll>
+        <ProjectSecCard />
+      </div>
+      <div className="flex pb-10 flex-col items-center gap-5 text-center">
+        <RevealOnScroll>
+          <h1 className="md:text-6xl mt-20 sm:text-4xl text-3xl font-bold ">
+            One service <br />
+            for all{" "}
+          </h1>
+        </RevealOnScroll>
+        <div className="md:px-0 sm:px-4 w-full">
+          <ServiceCard title={"Graphic Design"} data={graphicDesignData} />
+          <ServiceCard title={"Motion Design"} data={motionDesignData} />
+        </div>
 
-          <Slider />
-          </RevealOnScroll>
-
+        {/* <RevealOnScroll> */}
+        <h3 className="md:text-3xl text-2xl text-gray-600 font-semibold">
+          Outsourcing a simple explainer video could cost € 5,000 to € 10,000 or
+          more. With Design Plus Motion you get constant premium quality for a
+          fraction of the price.
+        </h3>
+        {/* </RevealOnScroll> */}
+      </div>
     </>
   );
 }

@@ -24,7 +24,7 @@ export default function RevealOnScroll({ children }: RevealOnScrollProps) {
         {
           opacity: 0,
           y: 50,
-          duration: 3,
+          duration: 2.5,
           scrollTrigger: {
             trigger: element,
             start: "top 400",
