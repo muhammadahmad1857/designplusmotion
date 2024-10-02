@@ -7,27 +7,26 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface RevealOnScrollProps {
+interface HideSectionProps {
   children: React.ReactNode;
 }
 
-export default function RevealOnScroll({ children }: RevealOnScrollProps) {
-  const revealRef = useRef<HTMLDivElement>(null);
+export default function HideSection({ children }: HideSectionProps) {
+  const hideRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    const element = revealRef.current;
+    const element = hideRef.current;
 
     if (element) {
-      gsap.from(
+      gsap.to(
         element,
 
         {
-          opacity: 0,
-          y: 50,
-          duration: 1.5,
+          display: "none",
+          duration: 1,
           scrollTrigger: {
             trigger: element,
-            start: "top 400",
+            start: "top -70",
             end: "bottom top",
             // markers: process.env.NODE_ENV === "development",
           },
@@ -37,7 +36,7 @@ export default function RevealOnScroll({ children }: RevealOnScrollProps) {
   }, []);
 
   return (
-    <div ref={revealRef} className="pb-10 reveal-section">
+    <div ref={hideRef} className="pb-10 reveal-section">
       {children}
     </div>
   );

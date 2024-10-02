@@ -1,5 +1,4 @@
 "use client";
-
 import TextSwap from "@/components/textSwap";
 import React from "react";
 import { Play } from "lucide-react";
@@ -8,7 +7,6 @@ import ProjectCards from "@/components/projectCards";
 import RevealOnScroll from "@/components/animation/revealOnScroll";
 import FeaturesSection from "@/components/featuredSection";
 import Slider from "@/components/slider";
-// import BenefitCards from "@/components/benefitCrads";
 import ProjectSecCard from "@/components/projectSecCard";
 import graphicDesignData from "@/data/graphicDesignData.json";
 import motionDesignData from "@/data/graphicDesignData.json";
@@ -16,6 +14,7 @@ import ServiceCard from "@/components/serviceCard";
 export default function Home() {
   return (
     <>
+      {/* <HideSection> */}
       <div className="flex flex-col items-center justify-center gap-y-10 text-center mt-32">
         <h1 className="text-white text-3xl">Logo</h1>
         <TextSwap text1="motion" text2="design" />
@@ -27,6 +26,8 @@ export default function Home() {
         </button>
         <p className="text-main/90 text-xs -mt-6">Limited spots available</p>
       </div>
+      {/* </HideSection> */}
+     
       <div className="min-h-[80dvh] glassmorphism border-main border-4 p-10 my-10">
         <div className="h-3/4 relative">
           <img

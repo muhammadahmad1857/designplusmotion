@@ -44,10 +44,10 @@ const Slider = () => {
         className={`p-4 text-center relative transition-transform duration-300 w-full md:w-[60%] text-main ${slideDirection}`} // Apply sliding class based on direction
         key={currentIndex} // Key changes to trigger CSS animation
       >
-        <p className="text-2xl font-bold animate-slide ">
+        <p className="sm:text-2xl text-base  font-bold animate-slide ">
           {reviewsData[currentIndex].text}
         </p>
-        <p className="text-lg font-semibold">
+        <p className="sm:text-lg text-sm font-semibold">
           - {reviewsData[currentIndex].username}
         </p>
       </div>
